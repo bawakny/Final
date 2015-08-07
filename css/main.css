@@ -9,8 +9,10 @@
 /* ==========================================================================
    Base styles: opinionated defaults
    ========================================================================== */
-
+@import url(http://fonts.googleapis.com/css?family=Open+Sans);
+ 
 html {
+	font-family:Open Sans;
     color: #222;
     font-size: 1em;
     line-height: 1.4;
@@ -94,23 +96,165 @@ textarea {
 /* ==========================================================================
    Author's custom styles
    ========================================================================== */
+header {
+    position:fixed;
+    width:100%;
+    z-index:100;
+    height:90px;
+    background-color: black;
+    box-shadow:0px 4px 4px 0px rgba(0,0,0,0.1);
+    display:block;
+}
+
+.container{
+	width: 85%;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+.innerContainer {
+    width: 93%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.topNavBar {
+   
+	 
+}
+
+.netcraftLogo {
 
 
+    margin-top: 40px;
+    position: absolute;
+	margin-left:2%;
+}
+
+.searchField {
+    height: auto;
+    width: auto;
+    margin-top: 40px;
+    float: right;
+    margin-right: 2%;
+    
+}
+
+body{
 
 
+    background-image:url("../img/body-background.jpg");
+	background-repeat: no-repeat;
+    background-attachment:fixed;
+	background-position: 0px 90px;
+	background-size:cover;
+	
+	
+   
+
+}
+
+.mainFrame{
+	position:relative;
+	
+	background:rgba(0,0,0,0.4);
+	height:1000px;
+overflow: auto;
+}
+
+.wrapper {
+padding-top:90px;
+width:100%
+}
 
 
+input {
+    line-height: normal;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    padding-left: 5px;
+}
 
 
+.notifications{
+	background-color:white;
+	margin-top:20px;
+	height:30px;
+	position:relative;
+	
+}
+ul{
+	list-style-type:none;
+	margin: 0px 0px 20px;
+padding: 0px;
+	
+
+}
 
 
+li{
+
+ float:left;
+ 
+}
+
+.optionBox{
+
+width: 31.3%;
+height: 100px;
+background-color: black;
+
+}
+
+.marginLeft{
+
+margin-left:3%;
+}
 
 
+.aaa{
+width:400px;
+height:400px;
+
+}
+
+.tab1 :hover    {
+ 
+background-color:red;
+
+}
+
+.tabsFrame{
+
+height:auto;
+width:auto;
+background-color:white;
+
+}
+
+.tab{
+width:100px;
+height:100px;
+
+}
+.frame1 {
+display:block;
+}
+
+.tab2 :hover {
+
+background-color:red;
+}
+
+.tab3 :hover {
+background-color:red;
+}
 
 
-
-
-
+.tab4 :hover {
+background-color:red;
+}
 /* ==========================================================================
    Helper classes
    ========================================================================== */
