@@ -12,7 +12,10 @@
 
         <link rel="stylesheet" href="css/normalize.css">
         <link rel="stylesheet" href="css/main.css">
+		 
         <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+		 
+		
 		
     </head>
     <body>
@@ -33,7 +36,7 @@
                 <div class="searchField" >
                     
                     <div class="nav-search-text">
-						<input  type="text" placeholder="  Search" ></input>
+						<input  type="text" placeholder="Search" >
                     </div>
                 </div>
                 
@@ -41,35 +44,64 @@
 		</header>
 		<div class="wrapper ">
 			<section class="mainFrame container"><br>
-				<div class="notifications innerContainer"> this site was updated at 20:47 06/08/2015 </div><br>
-				<div class="options innerContainer">
-					<ul  >
+				<div class="notifications innerContainer" ><div id="notifications">  </div></div><br>
+				<div class=" innerContainer">
+				
+				
+					<ul class="options" >
 					
 						<li class="optionBox">
-							<div  >aaaaaaa</div>
+							<div class="optionBack" >Select <br> Reporting Platform</div>
+							<div class="optionHead"  ><div>Choose QS report<img src="./img/icons/icon-arrow-up-b-128.png"  height="25" width="25"></div></div>
+							<div class="optionSelect">
+								<ul>
+									<li  ><div>Corporate</div></li>
+									<li  ><div>Simple</div></li>
+									<li  ><div>Business</div></li>
+								</ul>
+							</div>
 						</li>
 						<li class="optionBox marginLeft">
-							<div>bbbbbbbb</div>
+							<div class="optionBack">Select<br> Dashboard</div>
+							<div class="optionHead"><div>Choose dashboard<img src="./img/icons/icon-arrow-up-b-128.png"  height="25" width="25"></div> </div>
+							<div class="optionSelect">
+								<ul>
+									<li  ><div>Account Dashboard</div></li>
+									<li  ><div>Daily Huddle Dashboard</div></li>
+									<li  ><div>Tier 2 Dashboard</div></li>
+									<li  ><div>ADM Dashboard</div></li>
+								</ul>
+							</div>
+
 						</li>
 						<li class="optionBox marginLeft">
-							<div>ccccccc</div>
+							<div class="optionBack">Help & <br> Tutorials</div>
+							<div class="optionHead"><div>Choose Guide<img src="./img/icons/icon-arrow-up-b-128.png"  height="25" width="25"></div></div>
+							<div class="optionSelect">
+								<ul>
+									<li  ><div>Real Time</div></li>
+									<li  ><div>Past Data</div></li>
+									<li  ><div>Corporate Data</div></li>
+								</ul>
+							</div>
 						</li>
-					</ul>		
-				</div><br>
+					</ul>	
+				</div>	 
+						
 				
 				<div class="tabs innerContainer">
 					<ul  >
 					
-						<li class="tab tab1">
+						<li class="tab selected" id= "tab1">
 							<div  >aaaaaaa</div>
 						</li>
-						<li class="tab tab2 ">
+						<li class="tab marginLeft" id="tab2">
 							<div>bbbbbbbb</div>
 						</li>
-						<li class="tab tab3">
+						<li class="tab  marginLeft" id="tab3">
 							<div>ccccccc</div>
 						</li>
-						<li class="tab tab4">
+						<li class="tab  marginLeft" id="tab4">
 							<div>ccccccc</div>
 						</li>
 					</ul>
@@ -77,10 +109,10 @@
 				
 					<div class="tabsFrame">
 				 
-										 
-											<object class="frame1" type="text/html" data="http://ynet.co.il/" width="800px" height="600px" style="overflow:auto;border:5px ridge blue;">
+							<!-- >			 
+											<object class="frame1" type="text/html" data="http://ynet.co.il/" width="60%" height="100%" style="overflow:auto;border:5px ridge blue;">
 							</object>
-							<!-- >
+							
            
      
 							<object class="frame2" type="text/html" data="http://panet.co.il" width="800px" height="600px" style="overflow:auto;border:5px ridge blue; display:none;">
