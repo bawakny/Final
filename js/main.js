@@ -14,13 +14,13 @@ console.log(document.getElementById(id).contentWindow.document.body.scrollHeight
 
 
 */
-
+$.ajaxSetup({ cache: false });
 
     	$.ajax({
 url: "notification.json",
 type: "GET",
 dataType: "json",
-
+async: false,
 success: function (data) {
 	
     document.getElementById("notifications").innerHTML=data.text  ;
@@ -97,3 +97,25 @@ $('.tab').click(function(){
 	
 });
 
+$('.settings img').click(function(){
+	
+	$(this).parent().css("background-color","white");
+	$('.editContainer').fadeIn(500);
+	$('.editContainer').css("display","block");
+	
+});
+
+$('.editContainer button').click(function(){
+	
+	$('.settings').css("background-color","transparent");
+	$('.editContainer').fadeOut(500);
+	$('.editContainer').css("display","none");
+	
+});
+$('.SaveCancel label').click(function(){
+	
+	$('.settings').css("background-color","transparent");
+	$('.editContainer').fadeOut(500);
+	$('.editContainer').css("display","none");
+	
+});
