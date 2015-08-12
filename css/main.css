@@ -159,7 +159,7 @@ body{
 
 .mainFrame{
 	position:relative;
-	
+	padding-bottom: 20px;
 	background:rgba(0,0,0,0.25);
 	height:auto;
 }
@@ -238,7 +238,13 @@ padding-left:20px;
 
 
 }
+.toolsIcons :hover{
 
+
+filter: brightness(150%);
+-webkit-filter: brightness(1.5);
+
+}
 
 .optionBox:hover   .optionSelect   {
 
@@ -258,13 +264,14 @@ opacity:1;
         -ms-animation: rotate 0.3s; /* Internet Explorer */
          -o-animation: rotate 0.3s; /* Opera < 12.1 */
             animation: rotate 0.3s;
-     transform: rotate(540deg) ;
+     transform: rotate(720deg) ;
 }
 .optionHead img{
 
 margin-left:55%;
-
-
+transform: rotate(180deg) ;
+float:right;
+margin-right:5%;
 }
 
 .options :last-child  .optionHead img{
@@ -273,33 +280,33 @@ margin-left:62%;
 
 @keyframes rotate {
     from {  }
-    to   { transform: rotate(180deg) ; }
+    to   { transform: rotate(360deg) ; }
 }
 
 @-moz-keyframes rotate {
     from {  }
-    to   { transform: rotate(180deg) ; }
+    to   { transform: rotate(360deg) ; }
 }
 
 
 /* Safari, Chrome and Opera > 12.1 */
 @-webkit-keyframes rotate {
     from {  }
-    to   { transform: rotate(180deg) ; }
+    to   { transform: rotate(360deg) ; }
 }
 
 
 /* Internet Explorer */
 @-ms-keyframes rotate {
      from {  }
-    to   { transform: rotate(180deg) ; }
+    to   { transform: rotate(360deg) ; }
 }
 
 
 /* Opera < 12.1 */
 @-o-keyframes rotate {
     from {  }
-    to   { transform: rotate(180deg) ; }
+    to   { transform: rotate(360deg) ; }
 
 }
 
@@ -333,9 +340,9 @@ margin-left:62%;
     to   { opacity: 1; }
 }
 
-
-
-
+.optionSelect li{
+cursor: pointer;
+}
 .optionBox  .optionSelect div{
 border-bottom-style: solid;
 	border-width: thin;
@@ -355,6 +362,24 @@ border-bottom-style: none;
 float:none;
 }
 
+.optionHead li{
+float: left;
+padding-top: 3px;
+padding-left: 15px;
+width: auto;
+}
+
+.optionHead ul :last-child{
+width: 25px;
+float: right;
+padding-left: 0px;
+margin-right: 5px;
+}
+
+.optionHead ul{
+width: 100%;
+height: 100%;
+}
 
 .optionBox{
 
@@ -415,15 +440,15 @@ width:31.3%;
  
 
 .tabsFrame{
- 
-height:1000px;
+ padding-bottom: 20px;
+height:auto;
 width:auto;
 background-color:rgb(235,235,235);
-
+overflow: hidden;
 }
 .tabs{
 margin-top: 30px;
-
+color:white;
 }
 .tabs > ul{
 margin-top: 30px;
@@ -433,10 +458,17 @@ width: 100%;
 
 }
 
+.tab div {
+text-align: center;
+padding-top: 15px;
+
+}
+
 .tab{
 width: 22.75%;
 height:100%;
  background-color:rgb(100,100,100);
+ cursor: pointer;
 }
 .frame1 {
 display:block;
@@ -445,8 +477,104 @@ height:auto;
 
 .selected{
 background-color:rgb(235,235,235) !important;
+color:black;
+}
+
+.tools{
+
+width: 100%;
+height: 30px;
+background-color: #EBEBEB;
+margin-top: 40px;
+}
+ 
+ .chooseReport li{
+ 
+float: none;
+color: black;
+background-color: white;
+width: 220px;
+margin-left: 15px;
+height: 20px;
+padding-left: 15px;
+padding-top: 2px;
+
+border-style: solid;
+border-width: thin;
+border-color:rgba(100,100,100,0.5);
+display: none;
+ }
+
+
+  
+.tabframe{
+display:none;
+}
+
+.tab1Frame{
+display:block;
+}
+
+.tabsFrame iframe{
+border-style: none;
+width :100%;
+height:2000px;
 
 }
+ .frameContainer{
+ width:98%;
+ margin-left:1%;
+ margin-right:1%;
+ margin-top:30px;
+ height:auto;
+ }
+ 
+ .tools ul{
+width: 95%;
+cursor: pointer;
+height: 100%;
+position: relative;
+ }
+ 
+  .tools ul :first-child{
+ height: 30px;
+border-style: none;
+display: block;
+ 
+  }
+ 
+ .chooseReport li img{
+ transform: rotate(180deg);
+margin-left: 85%;
+margin-top: -22px;
+height:25px !important;
+width:25px !important;
+ }
+ 
+ .toolsIcons{
+ float: right;
+margin-top: 20px;
+margin-left: 20px;
+ 
+ }
+ .toolsIcons img{
+ width: 20px !important;
+height: 20px !important;
+cursor: pointer;
+ 
+ }
+ 
+ .toolsIcons a{
+padding: 0px !important;
+ }
+  .expandedOption .selected {
+  
+  background-color:blue !important;
+  }
+   .expandedOption{ 
+  box-shadow:0px 5px 6px 0px rgb(0, 0, 0);
+  
+  }
  
 /* ==========================================================================
    Helper classes
