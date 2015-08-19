@@ -177,21 +177,22 @@ $scope.hoverIn = function(event){
 		
 	$(event.target).addClass('selected');
 	
-	 
+	 // $window.alert( "hover");
+	//	$($(event.target)).addClass('selected');
+	//$('.expandedOption').removeClass('selected');
+//	$('.expandedOption').trigger( "hover" );
+		 
 	};
-	
-	
 	var site =[{
             "name": "",
             "url": ""
         },
-		"name": "",
+        {
+            "name": "",
             "url": ""
         },
-		"name": "",
-            "url": ""
-        },
-		"name": "",
+        {
+            "name": "",
             "url": ""
         }
     ];
@@ -201,7 +202,6 @@ $scope.hoverIn = function(event){
 		var obj;
 		 		 
 		 if ($scope.name1 != null)
-			
 			 if($scope.link1 != null){
 			obj= {
 			"name" : $scope.name1,
@@ -211,7 +211,6 @@ $scope.hoverIn = function(event){
 			 
 			 
 		 }
-		  
 		 if ($scope.name2 != null)
 			 if($scope.link2 != null){
 			obj= {
@@ -219,7 +218,7 @@ $scope.hoverIn = function(event){
 			"url"  : $scope.link2
 		 };
 		 site[1]=obj; 
-		 	 
+			 
 			 
 		 }
 		 if ($scope.name3 != null)
