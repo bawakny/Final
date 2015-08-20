@@ -1,5 +1,8 @@
 $('#frame1 , .arrow , .chooseReport , .SaveCancel label').css("display","none");
 
+
+ 
+ 
 /*
 function autoResize(id){
     var newheight;
@@ -16,6 +19,31 @@ console.log(document.getElementById(id).contentWindow.document.body.scrollHeight
 
 
 */
+
+
+	checkHashtab();
+
+function checkHashtab() {
+	var hash = location.hash;
+
+	$('.tabframe').css("display","none");
+	if (hash == "#My-Folders") $("#tab2 a").addClass("selected");
+	
+	else if (hash == "#My-Team-Folders") $("#tab3 a").addClass("selected");
+	else if (hash == "#Public-Reports") $("#tab4 a").addClass("selected");
+	else $("#tab1 a").addClass("selected");
+	
+}
+
+
+$('.optionSelect li').click(function(){
+	
+	
+	
+	 
+	window.open("http://netcraft.co.il", '_blank');
+	
+});
 $.ajaxSetup({ cache: false });
 
     	$.ajax({
@@ -71,46 +99,28 @@ $('.dropDownOption').click(function (){
 
 
 
- $('.expandedOption').click(function (){
-	 
-	 alert("aaaaaa");
-	 $('.dropDownOption').html($(this).html()+'<img src="./img/icons/icon-arrow-up-b-128.png"  height="25" width="25">');
-	  $('.expandedOption').css("display","none");
-	 
-});
+
 
 
 	
 	
 
 
-$('.tab').click(function(){
-	var $this = $(this);
-	 $('.tab').removeClass('selected');
-	$this.addClass('selected');
-	$('.tabframe').css("display","none");
-	$('.'+$this.attr('id')+'Frame').css("display","block");
-	
-	//alert($this.attr('id'));
-	
-	
-});
-
-$('.settings img').click(function(){
+$('.tab1Frame .settings img').click(function(){
 	
 	$(this).parent().css("background-color","white");
-	$('.editContainer').fadeIn(500);
-	$('.editContainer').css("display","block");
+	$('.tab1Frame .editContainer').fadeIn(500);
+	$('.tab1Frame .editContainer').css("display","block");
+	
+});
+$('.tab3Frame .settings img').click(function(){
+	
+	$(this).parent().css("background-color","white");
+	$('.tab3Frame .editContainer').fadeIn(500);
+	$('.tab3Frame .editContainer').css("display","block");
 	
 });
 
-$('.editContainer button').click(function(){
-	
-	$('.settings').css("background-color","transparent");
-	$('.editContainer').fadeOut(500);
-	$('.editContainer').css("display","none");
-	
-});
 $('.SaveCancel label').click(function(){
 	
 	$('.settings').css("background-color","transparent");
@@ -121,174 +131,316 @@ $('.SaveCancel label').click(function(){
 
 
 
+
+
 var tabSites = angular.module('tabSites',[]);
 
 
-tabSites.controller('tab',function($scope, $window){
-	 
-	 $scope.tab2clicked = function(){
-	//	 $window.alert( "hover");
-	// $('#frame2').attr("src","http://www.paulirish.com/"); 
-	// $('#tab2 a').attr("href","http://www.paulirish.com/")
-	 };
-	
-	
-});
-tabSites.controller('tab',function($scope, $window){
-	
-	/* 
-	var tabs = {
-    "tab1": [
-        {
-            "name": "PRIVMSG",
-            "url": "^http://.*"
-        },
-        {
-            "name": "PRIVMSG",
-            "url": "^delete.*"
-        },
-        {
-            "name": "PRIVMSG",
-            "url": "^random.*"
-        }
-    ],
-    "tab3": [
-        {
-            "name": "PRIVMSG",
-            "url": "^http://.*"
-        },
-        {
-            "name": "PRIVMSG",
-            "url": "^delete.*"
-        },
-        {
-            "name": "PRIVMSG",
-            "url": "^random.*"
-        }
-    ]
-};
-	*/
-	
 
-$scope.hoverIn = function(event){
+
+
+ 
+
+tabSites.controller('tab',function($scope, $window){
 	
 	
-	$('.expandedOption').removeClass('selected');
-		
-	$(event.target).addClass('selected');
-	
-	 // $window.alert( "hover");
-	//	$($(event.target)).addClass('selected');
-	//$('.expandedOption').removeClass('selected');
-//	$('.expandedOption').trigger( "hover" );
-		 
-	};
+	var tabs;
 	var site =[{
             "name": "",
             "url": ""
-        },
-        {
-            "name": "",
-            "url": ""
-        },
-        {
-            "name": "",
-            "url": ""
-        }
+        } 
     ];
+		
+		 
+	function updateSite(i) {
+		if (i==1)
+		$('#frame1').attr("src",$scope.sites[0].url);
+		if (i==3)
+			$('#frame3').attr("src",$scope.sites[0].url);
+    $('.dropDownOption').html($scope.sites[0].name+'<img src="./img/icons/icon-arrow-up-b-128.png"  height="25" width="25">');  
+		
+	$scope.linkVar=$scope.sites[0].url;
+}
+
 	
+	function tabSelected(tabId) {
+		var $url;
+	 $('.tab  a').removeClass("selected");
+		
+		$('.tab div').css("background-color","#646464");
+		$('.tab > a').css("color","white");
+		
+		$("#"+ tabId + " a").css("color","black");
+		$("#"+ tabId + " a").addClass("selected");
+		
+		$("#"+ tabId + " div").css("background-color","#EBEBEB ");
+		
+		$('.tabframe').css("display","none");
+		$('.'+tabId+'Frame').css("display","block");	
+		if ($('#tab2 a').attr("class") == "selected") {
+			$url = "http://www.paulirish.com/";
+			$('#frame2').attr("src",$url); 
+			
+		}
+		else if ($('#tab4 a').attr("class") == "selected") {
+			$url = "http://addyosmani.com/blog/";
+			$('#frame4').attr("src",$url); 
+			
+		}
+		else if ($('#tab1 a').attr("class") == "selected") {
+			tabs = localStorage.getItem(tabId);
+			
+			
+			if (tabs == null)	$(".tab1Frame .settings img" ).trigger( "click" );
+			else{
+				site = JSON.parse(tabs);
+				$scope.sites= site; 
+				$('#frame1 ,.tab1Frame .arrow ,.tab1Frame .chooseReport ,.tab1Frame .SaveCancel label').css("display","inline");
+				updateSite(1);
+		}
+		 
+		}
+		else if ($('#tab3 a').attr("class") == "selected") {
+			
+			tabs = localStorage.getItem(tabId);
+			
+			
+			
+			if (tabs == null)	$(".tab3Frame .settings img" ).trigger( "click" );
+			else{
+				site = JSON.parse(tabs);
+				$scope.sites= site; 
+				$('#frame3 ,.tab3Frame  .arrow ,.tab3Frame  .chooseReport , .tab3Frame .SaveCancel label').css("display","inline");
+				updateSite(3);
+		}
+		}
 	
-	$scope.submitSites = function(){
-		var obj;
-		 		 
-		 if ($scope.name1 != null)
-			 if($scope.link1 != null){
-			obj= {
-			"name" : $scope.name1,
-			"url"  : $scope.link1
-		 };
-		 site[0]=obj; 
-			 
-			 
-		 }
-		 if ($scope.name2 != null)
-			 if($scope.link2 != null){
-			obj= {
-			"name" : $scope.name2,
-			"url"  : $scope.link2
-		 };
-		 site[1]=obj; 
-			 
-			 
-		 }
-		 if ($scope.name3 != null)
-			if ($scope.link3 != null){
-			obj= {
-			"name" : $scope.name3,
-			"url"  : $scope.link3
-		 };
-		 site[2]=obj; 
-			 
-			$scope.sites= site; 
-		 }
-		 localStorage.setItem("currentSite", toString(1));
-		localStorage.setItem("tabs", JSON.stringify(site));
-		 $('#frame1 , .arrow , .chooseReport , .SaveCancel label').css("display","block");
-		  $('.SaveCancel ').css("display","inline");
-		// $scope.chosenSite = "yyyyyyy";
-		 $('.dropDownOption').html($scope.sites[0].name+'<img src="./img/icons/icon-arrow-up-b-128.png"  height="25" width="25">');
+}
+
+	
+	checkHash();
+
+function checkHash() {
+	var hash = location.hash;
+
+	
+	if (hash == "#My-Folders") tabSelected("tab2");
+	
+	else if (hash == "#My-Team-Folders") tabSelected("tab3");
+	else if (hash == "#Public-Reports") tabSelected("tab4");
+	else tabSelected("tab1");
+	
+}
+
+		// $window.alert($('#tab2 a').attr("class"));
+		
+	//if ($('#tab2 a').attr("class") == selected)	 $window.alert( "hover");
+		
+		
+		$scope.tabButton = function(event){
+		
+		
+		var $tabId = 	$(event.target).parent().parent().attr('id');
+		
+		tabSelected($tabId);
+		
+		
+		
+		
+		
+		
 	};
 	
-	$scope.chooseSite = function(event){
-		//$scope.$log =($(event.target));
-		//console.log($(event.target));
-		//$window.log($(event.target));
-		//$('.dropDownOption').html($scope.sites[2].name+'<img src="./img/icons/icon-arrow-up-b-128.png"  height="25" width="25">');
-		//angular.element($(event.target)).trigger( "click" );
-		//$window.alert("cccc");
-		//$scope.chosenSite.html("dddd");
+	
+
+$scope.expand4= function(){
+	
+	$url = "http://addyosmani.com/blog/";
+	$scope.link4= $url;
+	
+};
+
+$scope.expand2= function(){
+	
+	$url = "http://www.paulirish.com/";
+	$scope.link2= $url;
+	
+};
+
+
+
+	
+	
+	
 		
-		$scope.chosenSite = $scope.sites[0].name+'<img src="./img/icons/icon-arrow-up-b-128.png"  height="25" width="25">';
-		$('.dropDownOption').html($scope.sites[0].name+'<img src="./img/icons/icon-arrow-up-b-128.png"  height="25" width="25">');
-		$('.expandedOption').css("display","none");
-		//console.log($(event));
-		//console.log($scope);
+		
+		
+		
+		$scope.submitSites = function(){
+		var obj;
+		var $name,$link; 		 
+		 var j=0;
+		 
+		 
+			 
+		
+		 for(var i=0; i<3; i++){
+			
+			 switch(i) {
+				case 0:
+					$name= $scope.name1;
+					$link= $scope.link1;
+					break;
+				case 1:
+					$name= $scope.name2;
+					$link= $scope.link2;
+					break;
+				case 2:
+					$name= $scope.name3;
+					$link= $scope.link3;
+					break;
+			} 
+		
+		
+			
+		
+			$scope.sites[i]=obj;
+				if ($name != null){
+					if($link != null){
+						obj= {
+							"name" : $name,
+							"url"  : $link
+						};
+						
+						continue;
+				 
+					}else  return;
+				}
+				
+				else if ($link == null)
+				{
+					$scope.sites.splice(i,1);
+					continue;
+				}else return;			 
+							 
+		 }
+		 
+		
+		localStorage.setItem("tab1", JSON.stringify($scope.sites));
+		 
+		$('.tab1Frame .settings').css("background-color","transparent");
+		$('.tab1Frame .editContainer').fadeOut(500);
+		$('.tab1Frame .editContainer').css("display","none");
+		$('#frame1 ,.tab1Frame .arrow ,.tab1Frame .chooseReport ').css("display","block");
+		$('.tab1Frame .SaveCancel ').css("display","inline");
+		updateSite(1);
+		
+		
+	};
+	
+	$scope.submitSites3 = function(){
+		var obj;
+		var $name,$link; 		 
+		var j=0;	 
+		
+		 for(var i=0; i<3; i++){
+			
+			 switch(i) {
+				case 0:
+					$name= $scope.name3_1;
+					$link= $scope.link3_1;
+					break;
+				case 1:
+					$name= $scope.name3_2;
+					$link= $scope.link3_2;
+					break;
+				case 2:
+					$name= $scope.name3_3;
+					$link= $scope.link3_3;
+					break;
+			} 
+		 
+				$scope.sites[i]=obj;
+				if ($name != null){
+					if($link != null){
+						obj= {
+							"name" : $name,
+							"url"  : $link
+						};
+						
+						continue;
+				 
+					}else  return;
+				}
+				
+				else if ($link == null)
+				{
+					$scope.sites.splice(i,1);
+					continue;
+				}else return;			 
+							 
+		 }
+		 
+		
+		localStorage.setItem("tab3", JSON.stringify($scope.sites));
+		 
+		$('.tab3Frame .settings').css("background-color","transparent");
+		$('.tab3Frame .editContainer').fadeOut(500);
+		$('.tab3Frame .editContainer').css("display","none");
+		$('#frame3 ,.tab3Frame  .arrow ,.tab3Frame  .chooseReport ').css("display","block");
+		$('.tab3Frame .SaveCancel ').css("display","inline");
+		updateSite(3);
+		
+		
+	};
+	
+	
+	
+	$scope.chooseSite = function(event){
+		
+		$('.tab1Frame  .expandedOption').css("display","none");
+		
 		for(var i =0; i<3; i++){
 			
 			if ($scope.sites[i].name == $(event.target).html()){
 				var tmp = $scope.sites[0];
 				$scope.sites[0]=$scope.sites[i];
 				$scope.sites[i]=tmp;
-				$('#frame1').attr("src",$scope.sites[0].url);
+				updateSite(1);
+				
 				
 			}
 				
-				//localStorage.setItem("currentSite", toString(i));
+				
 		}
-		 localStorage.setItem("tabs", JSON.stringify($scope.sites));
-		$('.dropDownOption').html( $(event.target).html()+'<img src="./img/icons/icon-arrow-up-b-128.png"  height="25" width="25">');
+		 localStorage.setItem("tab1", JSON.stringify($scope.sites));
+		
 	};
 	
-	
-	var tabs = localStorage.getItem("tabs");
-	
-	if (tabs == null){
+	$scope.chooseSite3 = function(event){
 		
-		$('.settings img').trigger( "click" );
+		$('.tab3Frame  .expandedOption').css("display","none");
 		
+		for(var i =0; i<3; i++){
+			
+			if ($scope.sites[i].name == $(event.target).html()){
+				var tmp = $scope.sites[0];
+				$scope.sites[0]=$scope.sites[i];
+				$scope.sites[i]=tmp;
+				updateSite(1);
+				
+				
+			}
+				
+				
+		}
+		 localStorage.setItem("tab3", JSON.stringify($scope.sites));
 		
+	};
 		
-	}
-	else{
-		//curr=  parseInt(localStorage.getItem("currentSite"));
-		site = JSON.parse(tabs);
-		$scope.sites= site; 
-		//$window.alert(curr);
-		$scope.chosenSite = $scope.sites[0].name+'<img src="./img/icons/icon-arrow-up-b-128.png"  height="25" width="25">';
-		$('#frame1 , .arrow , .chooseReport , .SaveCancel label').css("display","inline");
-		$('.dropDownOption').html($scope.sites[0].name+'<img src="./img/icons/icon-arrow-up-b-128.png"  height="25" width="25">');
-		
+   
 
-		
-	}
+	
+
+	
 });

@@ -7,6 +7,8 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/X.Y.Z/angular-route.js"></script>
+		
         <link rel="apple-touch-icon" href="apple-touch-icon.png">
         <!-- Place favicon.ico in the root directory -->
 
@@ -100,37 +102,37 @@
 						
 				
 				<div  ng-app="tabSites" class="tabs innerContainer" >
-					<ul  >
+					<ul ng-controller="tab" >
 					
-						<li class="tab selected" id= "tab1">
-							<div  >Quick Reports</div>
+						<li   class="tab" id= "tab1">
+							<a ng-click="tabButton($event)" href="#Quick-Reports"  ><div>Quick Reports</div></a>
 						</li>
-						<li class="tab marginLeft" id="tab2">
-							<div>My Folders</div>
+						<li  class="tab marginLeft" id="tab2">
+							<a ng-click="tabButton($event)" href="#My-Folders"><div>My Folders</div></a>
 						</li>
-						<li class="tab  marginLeft" id="tab3">
-							<div>My Team Folders</div>
+						<li  class="tab  marginLeft" id="tab3">
+							<a ng-click="tabButton($event)" href="#My-Team-Folders"><div>My Team Folders</div></a>
 						</li>
-						<li class="tab  marginLeft" id="tab4">
-							<div>Public Reports</div>
+						<li  class="tab  marginLeft" id="tab4">
+							<a ng-click="tabButton($event)" href="#Public-Reports"><div>Public Reports</div></a>
 						</li>
 					</ul>
 				
 				
-					<div class="tabsFrame">
-					<div ng-controller="tab"   class="tab1Frame tabframe">
+					<div ng-controller="tab" class="tabsFrame">
+					<div    class="tab1Frame tabframe">
 						<div  class="tools"> 
 						<ul class="toolsContainer">
 							<li>
 								<ul class="chooseReport">
-								<li ng-bind-html="chosenSite" class="dropDownOption"> <img src="./img/icons/icon-arrow-up-b-128.png"  height="25" width="25"></li>
-								<li class="expandedOption" ng-repeat="site in sites" ng-click="chooseSite($event)" ng-mouseover="hoverIn($event)" >{{site.name}}</li>
+								<li   class="dropDownOption"> <img src="./img/icons/icon-arrow-up-b-128.png"  height="25" width="25"></li>
+								<li class="expandedOption" ng-repeat="site in sites" ng-click="chooseSite($event)"  >{{site.name}}</li>
 								
 								</ul>
 							</li>
 						
-						<li ng-style="settingBtn" class="toolsIcons settings" ><img src="./img/icons/settings.png" ></li>
-						<li class="toolsIcons arrow" id="arrow1"><a href="" target="_blank" ><img src="./img/icons/expand.png" ></a></li>
+						<li  class="toolsIcons settings" ><img src="./img/icons/settings.png" ></li>
+						<li  class="toolsIcons arrow" id="arrow1"><a ng-href="{{linkVar}}" target="_blank" ><img src="./img/icons/expand.png" ></a></li>
 						</ul>
 						
 						
@@ -183,35 +185,35 @@
 							 </div>
 						</div>
 					
-						<div  class="tab2Frame tabframe">
+						<div   class="tab2Frame tabframe">
 						<div  class="tools"> 
 						<ul class="toolsContainer">
 							
 						
-						<li class="toolsIcons"><a  href="" target="_blank" ><img src="./img/icons/expand.png" ></a></li>
+						<li class="toolsIcons"><a ng-href="{{link2}}" target="_blank" ><img ng-click="expand2()" src="./img/icons/expand.png" ></a></li>
 						</ul>
 						
 						</div>
 										 
 							<div class="frameContainer"	 >
-							 <iframe id="frame2"  src="http://www.paulirish.com/"></iframe> 
+							 <iframe id="frame2"  src=""></iframe> 
 							 </div>
 						</div>
 						
-						<div ng-controller="tab"  class="tab3Frame tabframe">
+						<div  class="tab3Frame tabframe">
 						<div  class="tools"> 
 						<ul class="toolsContainer">
 							<li>
 								<ul class="chooseReport">
 								<li class="dropDownOption">Ynet<img src="./img/icons/icon-arrow-up-b-128.png"  height="25" width="25"></li>
-								<li ng-repeat="site in sites" class="expandedOption">{{site.name}}</li>
+								<li class="expandedOption" ng-repeat="site in sites" ng-click="chooseSite3($event)"  >{{site.name}}</li>
 								
 								
 								</ul>
 							</li>
 						
-						<li ng-style="settingBtn" class="toolsIcons settings" ><img src="./img/icons/settings.png" ></li>
-						<li class="toolsIcons arrow" id="arrow1"><a href="" target="_blank" ><img src="./img/icons/expand.png" ></a></li>
+						<li  class="toolsIcons settings" ><img src="./img/icons/settings.png" ></li>
+						<li   class="toolsIcons arrow" id="arrow1"><a ng-href="{{link3}}" target="_blank" ><img src="./img/icons/expand.png" ></a></li>
 						</ul>
 						</div>
 						<div class="editWrapper">
@@ -224,8 +226,8 @@
 									<div>
 										<ul> 
 											<li class="reportNumber">Report01</li>
-											<li class="reportName reportName1">Name  <input ng-model="name1" type="text"  required></li>
-											<li class="reportUrl"><label>URL</label>  <input ng-model="link1" type="url"  required></li>
+											<li class="reportName reportName1">Name  <input ng-model="name3_1" type="text"  required></li>
+											<li class="reportUrl"><label>URL</label>  <input ng-model="link3_1" type="url"  required></li>
 										</ul>
 									</div>
 								</li>
@@ -233,8 +235,8 @@
 									<div>
 										<ul>
 											<li class="reportNumber">Report02</li>
-											<li class="reportName">Name  <input ng-model="name2" type="text" required ></li>
-											<li class="reportUrl">URL  <input ng-model="link2" type="url"  required></li>
+											<li class="reportName">Name  <input ng-model="name3_2" type="text" required ></li>
+											<li class="reportUrl">URL  <input ng-model="link3_2" type="url"  required></li>
 										</ul>
 									</div>
 								</li>
@@ -242,24 +244,39 @@
 									<div>
 										<ul>
 											<li class="reportNumber">Report03</li>
-											<li class="reportName">Name  <input ng-model="name3" type="text"  required></li>
-											<li class="reportUrl">URL  <input ng-model="link3" type="url"  required></li>
+											<li class="reportName">Name  <input ng-model="name3_3" type="text"  required></li>
+											<li class="reportUrl">URL  <input ng-model="link3_3" type="url"  required></li>
 										</ul>
 									</div>
 								</li>
 								
 						
 							</ul>
-							<div class="SaveCancel"><label>Cancel</label><button ng-click="submitSites()" type="submit" style="border: 0; background: black">Save</button></div>
+							<div class="SaveCancel"><label>Cancel</label><button ng-click="submitSites3()" type="submit" style="border: 0; background: black">Save</button></div>
 						
 						</div>
 						
 						</div>
-						</div>					 
+						</div>				 
 							<div class="frameContainer"	 >				
-							 <iframe id="frame4"  src=""></iframe> 
+							 <iframe id="frame3" src="" frameborder="0"   ></iframe> 
+							 </div>
+						</div>				
+						<div   class="tab4Frame tabframe">
+							<div  class="tools"> 
+								<ul class="toolsContainer">
+							
+						
+									<li  class="toolsIcons"><a ng-href="{{link4}}" target="_blank" ><img ng-click="expand4()" src="./img/icons/expand.png" ></a></li>
+								</ul>
+						
+							</div>
+										 
+							<div class="frameContainer"	 >
+								<iframe id="frame4"  src=""></iframe> 
 							 </div>
 						</div>
+						
     
 					</div>
 				

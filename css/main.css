@@ -231,6 +231,12 @@ height:auto;
 box-shadow: 0px 5px 15px #888888;
 }
 
+.optionBox  .optionSelect li:hover {
+
+background-color:#EBEBEB !important;
+}
+
+
 .optionBox .optionHead div , .notifications div{
 padding-top:5px;
 padding-left:20px;
@@ -405,6 +411,7 @@ background:url("../img/icons/actions-help.png") no-repeat scroll   50% 70px blac
 height: 0px;
 margin-top: 0px;
 width: 100%;
+
 }
 
 .dropdownOption >ul>li{
@@ -457,13 +464,24 @@ height: 50px;
 width: 100%;
 
 }
+.selected div{
 
+ background-color:#EBEBEB !important;
+}
+.selected {
+
+ color:black !important;
+}
 .tab div {
 text-align: center;
 padding-top: 15px;
+height: 35px;
+background-color: #646464;
+}
+.tab a{
+color:white;
 
 }
-
 .tab{
 width: 22.75%;
 height:100%;
@@ -476,7 +494,7 @@ height:auto;
 }
 
 .selected{
-background-color:rgb(235,235,235) !important;
+
 color:black;
 }
 
@@ -543,7 +561,7 @@ border-style: none;
 display: block;
  
   }
- 
+
  .chooseReport li img{
  transform: rotate(180deg);
 margin-left: 85%;
@@ -575,6 +593,16 @@ margin-top: 15px;
  position:relative;
  
  }
+ a{
+ text-decoration:none;
+ color:white;
+ }
+ a:visited 
+{
+    text-decoration: none; 
+    decoration: none; 
+}
+ 
  .toolsIcons a{
 padding: 0px !important;
  }
@@ -583,7 +611,10 @@ padding: 0px !important;
   box-shadow:0px 5px 6px 0px rgb(0, 0, 0);
   
   }
+.expandedOption:hover {
 
+background-color: #EBEBEB;
+}
   
 .editContainer{
 	color: #000;
