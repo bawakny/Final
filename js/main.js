@@ -151,13 +151,14 @@ tabSites.controller('tab',function($scope, $window){
 	function tabSelected(tabId) {
 		var $url;
 	 $('.tab  a').removeClass("selected");
+	 $('.tab').removeClass("selected");
 		
 		$('.tab div').css("background-color","#646464");
 		$('.tab > a').css("color","white");
 		
 		$("#"+ tabId + " a").css("color","black");
 		$("#"+ tabId + " a").addClass("selected");
-		
+		$("#"+ tabId).addClass("selected");
 		$("#"+ tabId + " div").css("background-color","#EBEBEB ");
 		
 		$('.tabframe').css("display","none");
