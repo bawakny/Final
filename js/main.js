@@ -246,7 +246,13 @@ tabSites.controller('tab',function($scope, $window){
 			var $name,$link; 		 
 			 var j=0;
 			
-			
+			$scope.sites3 =[{
+            "name": "",
+            "url": ""
+        } 
+    ];
+		
+		
 			
 				 
 			
@@ -277,8 +283,11 @@ tabSites.controller('tab',function($scope, $window){
 							continue;			
 							 
 						 }
-						 else if (($name == null)&& ( $link == null))					
-							continue; 
+						 else if (($name == null)&& ( $link == null))
+							
+							 continue;
+						 				
+							 
 							 
 						
 						 else return;
@@ -311,7 +320,11 @@ tabSites.controller('tab',function($scope, $window){
 		var $name,$link; 		 
 		 var j=0;
 		
-		
+		$scope.sites3 =[{
+            "name": "",
+            "url": ""
+        } 
+    ];
 			 
 		
 		 for(var i=0; i<3; i++){
@@ -375,49 +388,79 @@ tabSites.controller('tab',function($scope, $window){
 
 	$scope.chooseSite = function(event){
 		
-	
+		var site =[{
+            "name": "",
+            "url": ""
+        } 
+    ];
 		
-		site= JSON.parse(localStorage.getItem("tab1")); 
+		site = $scope.sites;
+		
 		$('.tab1Frame  .expandedOption').css("display","none");
 		
-		for(var i =0; i<3; i++){
+		
+			angular.forEach($scope.sites,function(value,index){
+               if (value.name == $(event.target).html()){
+				   var tmp = site[0];
+					site[0]=value;
+					site[index]=tmp;
+				   
+				   
+			   }
+            })
+				
+				
 			
-			if (site[i].name == $(event.target).html()){
-				var tmp = site[0];
-				site[0]=site[i];
-				site[i]=tmp;
-				updateSite(1);
+			$scope.sites= site  ;	
 				
-				
-			}
-				
-				
-		}
-		 localStorage.setItem("tab1", JSON.stringify(site));
+					
+		 localStorage.setItem("tab1", JSON.stringify($scope.sites));
+		updateSite(1);
+
 		
 	};
 	
-	$scope.chooseSite3 = function(arr,event){
+	$scope.chooseSite3 = function(event){
+		var site =[{
+            "name": "",
+            "url": ""
+        } 
+    ];
 		
-		
+		site = $scope.sites3;
 		
 		$('.tab3Frame  .expandedOption').css("display","none");
 		
-		for(var i =0; i<3; i++){
-			
-			if ($site3[i].name == $(event.target).html()){
-				var tmp = site3[0];
-				site3[0]=site3[i];
-				site3[i]=tmp;
-				updateSite(3);
-				
-				
-			}
-				
-				
-		}
-		 localStorage.setItem("tab3", JSON.stringify(site3));
 		
+			angular.forEach($scope.sites3,function(value,index){
+               if (value.name == $(event.target).html()){
+				   var tmp = site[0];
+					site[0]=value;
+					site[index]=tmp;
+				   
+				   
+			   }
+            })
+				
+				
+			
+			$scope.sites3= site  ;	
+				
+				
+			
+				
+				
+		
+		
+				
+				
+				
+			
+				
+				
+		
+		 localStorage.setItem("tab3", JSON.stringify($scope.sites3));
+		updateSite(3);
 	};
 		
    
