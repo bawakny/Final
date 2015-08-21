@@ -1,27 +1,6 @@
 $('#frame1 , .arrow , .chooseReport , .SaveCancel label').css("display","none");
 
-
- 
- 
-/*
-function autoResize(id){
-    var newheight;
- console.log("hhhhhhhh");   
-console.log(document.getElementById(id).contentWindow.document.body.scrollHeight);
-     
-        newheight=document.getElementById(id).contentWindow.document.body.scrollHeight;
-        
-    
-	alert(newheight);
-    document.getElementById(id).height= newheight + "px";
-    
-}
-
-
-*/
-
-
-	checkHashtab();
+checkHashtab();	
 
 function checkHashtab() {
 	var hash = location.hash;
@@ -38,9 +17,6 @@ function checkHashtab() {
 
 $('.optionSelect li').click(function(){
 	
-	
-	
-	 
 	window.open("http://netcraft.co.il", '_blank');
 	
 });
@@ -68,42 +44,43 @@ error: function(result){
 }
 });
 
-
-
-
-$('.tools .arrow').click(function(){
+$('.tab3Frame .dropDownOption').click(function (){
 	
-	$frame= $(this).parent().parent().next().attr('class');
-	$link= $('.'+$frame+' iframe').attr('src');
-	
-	$('#arrow1').attr("href","http://ynet.co.il/");
-	
-	
-});
-
-$('.dropDownOption').click(function (){
-	
-	var $display= $('.expandedOption').css("display");
+	var $display= $('.tab3Frame .expandedOption').css("display");
 	  
-	  if ($display == "none"){
+	  if ($display == "none") {
 		  
-		  $('.expandedOption').fadeIn(150);
-		  $('.tools .arrow').href='http://ynet.co.il/';
+		$('.tab3Frame .expandedOption').fadeIn(150);
+		$('.tab3Frame .expandedOption').css("display","block");
 	  }
+	
 	else
-	 $('.expandedOption').fadeOut(150)
-	$('.tools .arrow').attr("href","http://ynet.co.il/");
+	{
+	$('.tab3Frame .expandedOption').fadeOut(150);	
+	$('.tab3Frame .expandedOption').css("display","none");
+	}
+	
 	 
 });
 
-
-
-
-
-
-
+$('.tab1Frame .dropDownOption').click(function (){
 	
+	var $display= $('.tab1Frame .expandedOption').css("display");
+	  
+	  if ($display == "none") {
+		  
+		$('.tab1Frame .expandedOption').fadeIn(150);
+		$('.tab1Frame .expandedOption').css("display","block");
+	  }
 	
+	else
+	{
+	$('.tab1Frame .expandedOption').fadeOut(150);	
+	$('.tab1Frame .expandedOption').css("display","none");
+	}
+	
+	 
+});
 
 
 $('.tab1Frame .settings img').click(function(){
@@ -135,31 +112,39 @@ $('.SaveCancel label').click(function(){
 
 var tabSites = angular.module('tabSites',[]);
 
-
-
-
-
- 
-
 tabSites.controller('tab',function($scope, $window){
 	
 	
 	var tabs;
-	var site =[{
+	$scope.sites =[{
             "name": "",
             "url": ""
         } 
     ];
-		
+	$scope.sites3 =[{
+            "name": "",
+            "url": ""
+        } 
+    ];
 		 
 	function updateSite(i) {
-		if (i==1)
-		$('#frame1').attr("src",$scope.sites[0].url);
-		if (i==3)
-			$('#frame3').attr("src",$scope.sites[0].url);
-    $('.dropDownOption').html($scope.sites[0].name+'<img src="./img/icons/icon-arrow-up-b-128.png"  height="25" width="25">');  
+		if (i==1){
+			$scope.sites= JSON.parse(localStorage.getItem("tab1")); 
+			$('#frame1').attr("src",$scope.sites[0].url);
+			$('.tab1Frame .dropDownOption').html($scope.sites[0].name+'<img src="./img/icons/icon-arrow-up-b-128.png"  height="25" width="25">');  
+			$scope.linkVar=$scope.sites[0].url;
+		}
 		
-	$scope.linkVar=$scope.sites[0].url;
+		else if (i==3){
+			$scope.sites3= JSON.parse(localStorage.getItem("tab3")); 
+			$('#frame3').attr("src",$scope.sites3[0].url);
+			$('.tab3Frame .dropDownOption').html($scope.sites3[0].name+'<img src="./img/icons/icon-arrow-up-b-128.png"  height="25" width="25">'); 
+			$scope.linkVar=$scope.sites3[0].url;
+		}
+			
+   
+		
+	
 }
 
 	
@@ -193,8 +178,8 @@ tabSites.controller('tab',function($scope, $window){
 			
 			if (tabs == null)	$(".tab1Frame .settings img" ).trigger( "click" );
 			else{
-				site = JSON.parse(tabs);
-				$scope.sites= site; 
+				 
+				$scope.sites= JSON.parse(tabs);
 				$('#frame1 ,.tab1Frame .arrow ,.tab1Frame .chooseReport ,.tab1Frame .SaveCancel label').css("display","inline");
 				updateSite(1);
 		}
@@ -208,8 +193,9 @@ tabSites.controller('tab',function($scope, $window){
 			
 			if (tabs == null)	$(".tab3Frame .settings img" ).trigger( "click" );
 			else{
-				site = JSON.parse(tabs);
-				$scope.sites= site; 
+				
+				$scope.sites3= JSON.parse(tabs); 
+				
 				$('#frame3 ,.tab3Frame  .arrow ,.tab3Frame  .chooseReport , .tab3Frame .SaveCancel label').css("display","inline");
 				updateSite(3);
 		}
@@ -220,128 +206,113 @@ tabSites.controller('tab',function($scope, $window){
 	
 	checkHash();
 
-function checkHash() {
-	var hash = location.hash;
+	function checkHash() {
+		var hash = location.hash;
 
-	
-	if (hash == "#My-Folders") tabSelected("tab2");
-	
-	else if (hash == "#My-Team-Folders") tabSelected("tab3");
-	else if (hash == "#Public-Reports") tabSelected("tab4");
-	else tabSelected("tab1");
-	
-}
+		
+		if (hash == "#My-Folders") tabSelected("tab2");
+		
+		else if (hash == "#My-Team-Folders") tabSelected("tab3");
+		else if (hash == "#Public-Reports") tabSelected("tab4");
+		else tabSelected("tab1");
+		
+	}
+		
+	$scope.tabButton = function(event){
+			
+			
+			var $tabId = 	$(event.target).parent().parent().attr('id');
+			
+			tabSelected($tabId);
+			
+		};
 
-		// $window.alert($('#tab2 a').attr("class"));
+	$scope.expand4= function(){
 		
-	//if ($('#tab2 a').attr("class") == selected)	 $window.alert( "hover");
-		
-		
-		$scope.tabButton = function(event){
-		
-		
-		var $tabId = 	$(event.target).parent().parent().attr('id');
-		
-		tabSelected($tabId);
-		
-		
-		
-		
-		
+		$url = "http://addyosmani.com/blog/";
+		$scope.link4= $url;
 		
 	};
-	
-	
 
-$scope.expand4= function(){
-	
-	$url = "http://addyosmani.com/blog/";
-	$scope.link4= $url;
-	
-};
-
-$scope.expand2= function(){
-	
-	$url = "http://www.paulirish.com/";
-	$scope.link2= $url;
-	
-};
-
-
-
-	
-	
-	
+	$scope.expand2= function(){
 		
+		$url = "http://www.paulirish.com/";
+		$scope.link2= $url;
 		
+	};
 		
+	$scope.submitSites = function(){
+			var obj;
+			var $name,$link; 		 
+			 var j=0;
+			
+			
+			
+				 
+			
+			 for(var i=0; i<3; i++){
+				
+				 switch(i) {
+					case 0:
+						$name= $scope.name1;
+						$link= $scope.link1;
+						break;
+					case 1:
+						$name= $scope.name2;
+						$link= $scope.link2;
+						break;
+					case 2:
+						$name= $scope.name3;
+						$link= $scope.link3;
+						break;
+				} 
+						
+						 if (($name != null)&& ( $link != null)){
+							 
+							obj= {
+								"name" : $name,
+								"url"  : $link
+							};
+							$scope.sites[j++]=obj;
+							continue;			
+							 
+						 }
+						 else if (($name == null)&& ( $link == null))					
+							continue; 
+							 
+						
+						 else return;
+							
+				
+			
+				
+			 }
+			 
+			
+					
+				
+				
+						
+			 
+			localStorage.setItem("tab1", JSON.stringify($scope.sites));
+			
+			$('.tab1Frame .settings').css("background-color","transparent");
+			$('.tab1Frame .editContainer').fadeOut(500);
+			$('.tab1Frame .editContainer').css("display","none");
+			$('#frame1 ,.tab1Frame .arrow ,.tab1Frame .chooseReport ').css("display","block");
+			$('.tab1Frame .SaveCancel label').css("display","inline");
+			updateSite(1);
+			
+			
+		};
 		
-		$scope.submitSites = function(){
-		var obj;
+	$scope.submitSites3 = function(){
+	var obj;
 		var $name,$link; 		 
 		 var j=0;
-		 
-		 
+		
+		
 			 
-		
-		 for(var i=0; i<3; i++){
-			
-			 switch(i) {
-				case 0:
-					$name= $scope.name1;
-					$link= $scope.link1;
-					break;
-				case 1:
-					$name= $scope.name2;
-					$link= $scope.link2;
-					break;
-				case 2:
-					$name= $scope.name3;
-					$link= $scope.link3;
-					break;
-			} 
-		
-		
-			
-		
-			$scope.sites[i]=obj;
-				if ($name != null){
-					if($link != null){
-						obj= {
-							"name" : $name,
-							"url"  : $link
-						};
-						
-						continue;
-				 
-					}else  return;
-				}
-				
-				else if ($link == null)
-				{
-					$scope.sites.splice(i,1);
-					continue;
-				}else return;			 
-							 
-		 }
-		 
-		
-		localStorage.setItem("tab1", JSON.stringify($scope.sites));
-		 
-		$('.tab1Frame .settings').css("background-color","transparent");
-		$('.tab1Frame .editContainer').fadeOut(500);
-		$('.tab1Frame .editContainer').css("display","none");
-		$('#frame1 ,.tab1Frame .arrow ,.tab1Frame .chooseReport ').css("display","block");
-		$('.tab1Frame .SaveCancel ').css("display","inline");
-		updateSite(1);
-		
-		
-	};
-	
-	$scope.submitSites3 = function(){
-		var obj;
-		var $name,$link; 		 
-		var j=0;	 
 		
 		 for(var i=0; i<3; i++){
 			
@@ -359,53 +330,62 @@ $scope.expand2= function(){
 					$link= $scope.link3_3;
 					break;
 			} 
-		 
-				$scope.sites[i]=obj;
-				if ($name != null){
-					if($link != null){
+					
+					 if (($name != null)&& ( $link != null)){
+						 
 						obj= {
 							"name" : $name,
 							"url"  : $link
 						};
+						$scope.sites3[j++]=obj;
+						continue;			
+						 
+					 }
+					 else if (($name == null)&& ( $link == null))					
+						continue; 
+						 
+					
+					 else return;
 						
-						continue;
-				 
-					}else  return;
-				}
-				
-				else if ($link == null)
-				{
-					$scope.sites.splice(i,1);
-					continue;
-				}else return;			 
-							 
+			
+		
+			
 		 }
 		 
 		
-		localStorage.setItem("tab3", JSON.stringify($scope.sites));
-		 
+				
+			
+			
+					
+		
+		localStorage.setItem("tab3", JSON.stringify($scope.sites3));
+		$site3=$scope.sites3;
 		$('.tab3Frame .settings').css("background-color","transparent");
 		$('.tab3Frame .editContainer').fadeOut(500);
 		$('.tab3Frame .editContainer').css("display","none");
-		$('#frame3 ,.tab3Frame  .arrow ,.tab3Frame  .chooseReport ').css("display","block");
-		$('.tab3Frame .SaveCancel ').css("display","inline");
+		$('#frame3 ,.tab1Frame .arrow ,.tab3Frame .chooseReport ').css("display","block");
+		$('.tab3Frame .SaveCancel label').css("display","inline");
+		
 		updateSite(3);
 		
 		
 	};
 	
 	
-	
+
 	$scope.chooseSite = function(event){
 		
+	
+		
+		site= JSON.parse(localStorage.getItem("tab1")); 
 		$('.tab1Frame  .expandedOption').css("display","none");
 		
 		for(var i =0; i<3; i++){
 			
-			if ($scope.sites[i].name == $(event.target).html()){
-				var tmp = $scope.sites[0];
-				$scope.sites[0]=$scope.sites[i];
-				$scope.sites[i]=tmp;
+			if (site[i].name == $(event.target).html()){
+				var tmp = site[0];
+				site[0]=site[i];
+				site[i]=tmp;
 				updateSite(1);
 				
 				
@@ -413,34 +393,35 @@ $scope.expand2= function(){
 				
 				
 		}
-		 localStorage.setItem("tab1", JSON.stringify($scope.sites));
+		 localStorage.setItem("tab1", JSON.stringify(site));
 		
 	};
 	
-	$scope.chooseSite3 = function(event){
+	$scope.chooseSite3 = function(arr,event){
+		
+		
 		
 		$('.tab3Frame  .expandedOption').css("display","none");
 		
 		for(var i =0; i<3; i++){
 			
-			if ($scope.sites[i].name == $(event.target).html()){
-				var tmp = $scope.sites[0];
-				$scope.sites[0]=$scope.sites[i];
-				$scope.sites[i]=tmp;
-				updateSite(1);
+			if ($site3[i].name == $(event.target).html()){
+				var tmp = site3[0];
+				site3[0]=site3[i];
+				site3[i]=tmp;
+				updateSite(3);
 				
 				
 			}
 				
 				
 		}
-		 localStorage.setItem("tab3", JSON.stringify($scope.sites));
+		 localStorage.setItem("tab3", JSON.stringify(site3));
 		
 	};
 		
    
 
-	
 
 	
 });

@@ -7,7 +7,7 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular.min.js"></script>
-		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/X.Y.Z/angular-route.js"></script>
+		
 		
         <link rel="apple-touch-icon" href="apple-touch-icon.png">
         <!-- Place favicon.ico in the root directory -->
@@ -205,8 +205,8 @@
 						<ul class="toolsContainer">
 							<li>
 								<ul class="chooseReport">
-								<li class="dropDownOption">Ynet<img src="./img/icons/icon-arrow-up-b-128.png"  height="25" width="25"></li>
-								<li class="expandedOption" ng-repeat="site in sites" ng-click="chooseSite3($event)"  >{{site.name}}</li>
+								<li class="dropDownOption"><img src="./img/icons/icon-arrow-up-b-128.png"  height="25" width="25"></li>
+								<li class="expandedOption" ng-repeat="site in sites3" ng-click="chooseSite3(sites3,$event)"  >{{site.name}}</li>
 								
 								
 								</ul>
