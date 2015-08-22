@@ -749,7 +749,7 @@ width: 84%;
     float: none;
 }
 .container {
-    width: 95%;
+    width: 100%;
 	}
 
 	.notifications  div{
@@ -839,6 +839,13 @@ padding-bottom: 5px;
     width: 80%;
     float: right;
 	margin-right: 5px;
+}
+
+.frameContainer {
+    width: 96%;
+    margin-left: 2%;
+    margin-right: 2%;
+    
 }
 
  }
