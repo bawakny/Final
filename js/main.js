@@ -15,6 +15,8 @@ function checkHashtab() {
 }
 
 
+
+
 $('.optionSelect li').click(function(){
 	
 	window.open("http://netcraft.co.il", '_blank');

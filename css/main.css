@@ -724,12 +724,38 @@ width: 84%;
  }
  header{
  position: relative;
+ height: 125px;
+ overflow: hidden;
  }
- 
+ .topNavBar {
+    overflow: hidden;
+	width: 51% !important;
+}
  .wrapper {
     padding-top: 0px;
 	
 	}
+	
+	.notifications {
+    margin-top: 0px;
+    margin-bottom: 20px;
+}
+
+
+	
+	.searchField {
+    margin-top: 80px;
+   
+    float: none;
+}
+.container {
+    width: 95%;
+	}
+
+	.notifications  div{
+padding-bottom:5px;
+background-color: #EBEBEB;
+}
   .selected{
  display:block !important;
  }
@@ -742,13 +768,78 @@ width: 84%;
  .tab{
  display:none;
  width:100%;
+ 
  }
  
- .tabs :hover li{
+ .tabs {
+    overflow: hidden;
+    margin-top: 30px;
+}
+ .tabs :hover .tab{
  
  display:block !important;
  }
  
+ .tabsFrame {
+    
+    overflow: visible;
+}
+
+.tabs > ul {
+    
+    height: auto;
+    overflow: hidden;
+    margin-top: 0px;
+}
+.options {
+   
+    height: 540px;
+}
+
+.tools {
+   
+    margin-top: 0px;
+    padding-top: 15px;
+}
+.settings{
+margin-top:0px
+
+}
+
+.arrow{
+
+margin-top:5px;
+}
+
+.reportNumber {
+    padding-top: 5px;
+padding-bottom: 5px;
+    width: 100%;
+}
+
+.reportUrl {
+    width: 100%;
+   margin-bottom: 15px;
+}
+.editContainer {
+ 
+    margin-top: 5px;
+	}
+
+.reportName {
+    width: 100%;
+	margin-bottom: 10px;
+}
+
+.edit {
+  
+    padding-top: 10px;
+}
+.report input {
+    width: 80%;
+    float: right;
+	margin-right: 5px;
+}
 
  }
 /* ==========================================================================
