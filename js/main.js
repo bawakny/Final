@@ -78,14 +78,14 @@ tabSites.controller('tab', function($scope, $window) {
 	}];
 
 	function updateSite(i) {
+		$scope.sites = JSON.parse(localStorage.getItem("tab1"));
+		$scope.sites3 = JSON.parse(localStorage.getItem("tab3"));
 		if (i == 1) {
-			$scope.sites = JSON.parse(localStorage.getItem("tab1"));
 			$('#frame1').attr("src", $scope.sites[0].url);
 			$('.tab1Frame .dropDownOption').html($scope.sites[0].name + '<img src="./img/icons/icon-arrow-up-b-128.png"  height="25" width="25">');
 			$scope.linkVar = $scope.sites[0].url;
 		}
 		else if (i == 3) {
-			$scope.sites3 = JSON.parse(localStorage.getItem("tab3"));
 			$('#frame3').attr("src", $scope.sites3[0].url);
 			$('.tab3Frame .dropDownOption').html($scope.sites3[0].name + '<img src="./img/icons/icon-arrow-up-b-128.png"  height="25" width="25">');
 			$scope.linkVar3 = $scope.sites3[0].url;
