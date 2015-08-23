@@ -1,19 +1,24 @@
 /*! HTML5 Boilerplate v5.0.0 | MIT License | http://h5bp.com/ */
+
 /*
  * What follows is the result of much research on cross-browser styling.
  * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
  * Kroc Camen, and the H5BP dev community and team.
  */
+
 /* ==========================================================================
    Base styles: opinionated defaults
    ========================================================================== */
 
+
+   
 html {
-    font-family: Calibri;
-    color: #222;
-    font-size: 16px;
-    line-height: 1.4;
+  font-family: Calibri;
+  color: #222;
+  font-size: 16px;
+  line-height: 1.4;
 }
+
 /*
  * Remove text-shadow in selection highlight:
  * https://twitter.com/miketaylr/status/12228805301
@@ -23,25 +28,28 @@ html {
  */
 
 ::-moz-selection {
-    background: #b3d4fc;
-    text-shadow: none;
+  background: #b3d4fc;
+  text-shadow: none;
 }
+
 ::selection {
-    background: #b3d4fc;
-    text-shadow: none;
+  background: #b3d4fc;
+  text-shadow: none;
 }
+
 /*
  * A better looking default horizontal rule
  */
 
 hr {
-    display: block;
-    height: 1px;
-    border: 0;
-    border-top: 1px solid #ccc;
-    margin: 1em 0;
-    padding: 0;
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: 1em 0;
+  padding: 0;
 }
+
 /*
  * Remove the gap between audio, canvas, iframes,
  * images, videos and the bottom of their containers:
@@ -54,663 +62,797 @@ iframe,
 img,
 svg,
 video {
-    vertical-align: middle;
+  vertical-align: middle;
 }
+
 /*
  * Remove default fieldset styles.
  */
 
 fieldset {
-    border: 0;
-    margin: 0;
-    padding: 0;
+  border: 0;
+  margin: 0;
+  padding: 0;
 }
+
 /*
  * Allow only vertical resizing of textareas.
  */
 
 textarea {
-    resize: vertical;
+  resize: vertical;
 }
+
 /* ==========================================================================
    Browser Upgrade Prompt
    ========================================================================== */
 
 .browserupgrade {
-    margin: 0.2em 0;
-    background: #ccc;
-    color: #000;
-    padding: 0.2em 0;
+  margin: 0.2em 0;
+  background: #ccc;
+  color: #000;
+  padding: 0.2em 0;
 }
+
 /* ==========================================================================
    Author's custom styles
    ========================================================================== */
-
 header {
-    position: fixed;
-    width: 100%;
-    z-index: 100;
-    height: 90px;
+    position:fixed;
+    width:100%;
+    z-index:100;
+    height:90px;
     background-color: black;
-    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.1);
-    display: block;
+    box-shadow:0px 4px 4px 0px rgba(0,0,0,0.1);
+    display:block;
 }
-.container {
-    width: 85%;
+
+.container{
+	width: 85%;
     margin-left: auto;
     margin-right: auto;
+
 }
+
 .innerContainer {
     width: 93%;
     margin-left: auto;
     margin-right: auto;
 }
-.topNavBar {} .netcraftLogo {
+
+.topNavBar {
+   
+	 
+}
+
+.netcraftLogo {
+
+
     margin-top: 40px;
     position: absolute;
-    margin-left: 2%;
+	margin-left:2%;
 }
+
 .searchField {
     height: auto;
     width: auto;
     margin-top: 40px;
     float: right;
     margin-right: 2%;
+    
 }
-body {
-    background-image: url("../img/body-background.jpg");
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position: 0px 90px;
-    background-size: cover;
+
+body{
+
+
+    background-image:url("../img/body-background.jpg");
+	background-repeat: no-repeat;
+    background-attachment:fixed;
+	background-position: 0px 90px;
+	background-size:cover;
+	
+	
+   
+
 }
-.mainFrame {
-    position: relative;
-    padding-bottom: 20px;
-    background: rgba(0, 0, 0, 0.25);
-    height: auto;
+
+.mainFrame{
+	position:relative;
+	padding-bottom: 20px;
+	background:rgba(0,0,0,0.25);
+	height:auto;
 }
+
 .wrapper {
-    padding-top: 90px;
-    width: 100%
+padding-top:90px;
+width:100%
 }
+
+
 input {
     line-height: normal;
     padding-top: 2px;
     padding-bottom: 2px;
     padding-left: 5px;
 }
-.notifications {
-    background-color: rgb(235, 235, 235);
-    margin-top: 20px;
-    height: 30px;
-    position: relative;
+
+
+.notifications{
+	background-color:rgb(235,235,235);
+	margin-top:20px;
+	height:30px;
+	position:relative;
+	
 }
-ul {
-    list-style-type: none;
-    margin: 0px 0px 20px;
-    padding: 0px;
+ul{
+	list-style-type:none;
+	margin: 0px 0px 20px;
+padding: 0px;
+	
+
 }
-li {
-    float: left;
+
+
+li{
+
+ float:left;
+ 
 }
-.options {
-    position: relative;
-    margin-bottom: 0px;
-    height: 162px;
+.options{
+position:relative;
+margin-bottom: 0px;
+height: 162px;
+
 }
-.optionBox .optionBack {
-    padding-top: 10px;
-    color: white;
-    text-align: center;
-    width: auto;
-    height: 125px;
+
+.optionBox  .optionBack{
+padding-top:10px;
+color: white;
+text-align:center;
+width:auto;
+height:125px;
 }
-.optionBox .optionHead {
-    background-color: rgb(235, 235, 235);
-    width: 100%;
-    color: black;
-    height: 30px;
-    font-size: 16px;
+
+ .optionBox  .optionHead   {
+background-color:rgb(235,235,235);
+width:100%;
+color:black;
+height: 30px;
+font-size:16px;
 }
-.optionBox .optionSelect {
-    background-color: white;
-    width: 100%;
-    color: black;
-    opacity: 0;
-    display: none;
-    height: auto;
-    box-shadow: 0px 5px 15px #888888;
+
+.optionBox  .optionSelect {
+background-color:white;
+width:100%;
+color:black;
+opacity:0;
+display:none;
+height:auto;
+box-shadow: 0px 5px 15px #888888;
 }
-.optionBox .optionSelect li:hover {
-    background-color: #EBEBEB !important;
+
+.optionBox  .optionSelect li:hover {
+
+background-color:#EBEBEB !important;
 }
-.optionBox .optionHead div,
-.notifications div {
-    padding-top: 5px;
-    padding-left: 20px;
+
+
+.optionBox .optionHead div , .notifications div{
+padding-top:5px;
+padding-left:20px;
+
+
 }
-.toolsIcons:hover {
-    filter: brightness(150%);
-    -webkit-filter: brightness(1.5);
+.toolsIcons :hover{
+
+
+filter: brightness(150%);
+-webkit-filter: brightness(1.5);
+
 }
-.optionBox:hover .optionSelect {
-    display: block;
-    -webkit-animation: fadein 2s;
-    /* Safari, Chrome and Opera > 12.1 */
-    
-    -moz-animation: fadein 1s;
-    /* Firefox < 16 */
-    
-    -ms-animation: fadein 1s;
-    /* Internet Explorer */
-    
-    -o-animation: fadein 1s;
-    /* Opera < 12.1 */
-    
-    animation: fadein 1s;
-    opacity: 1;
+
+.optionBox:hover   .optionSelect   {
+
+display:block;
+
+ -webkit-animation: fadein 2s; /* Safari, Chrome and Opera > 12.1 */
+       -moz-animation: fadein 1s; /* Firefox < 16 */
+        -ms-animation: fadein 1s; /* Internet Explorer */
+         -o-animation: fadein 1s; /* Opera < 12.1 */
+            animation: fadein 1s;
+opacity:1;
 }
-.optionBox:hover .optionHead img {
-    -webkit-animation: rotate 0.6s;
-    /* Safari, Chrome and Opera > 12.1 */
-    
-    -moz-animation: rotate 0.3s;
-    /* Firefox < 16 */
-    
-    -ms-animation: rotate 0.3s;
-    /* Internet Explorer */
-    
-    -o-animation: rotate 0.3s;
-    /* Opera < 12.1 */
-    
-    animation: rotate 0.3s;
-    transform: rotate(720deg);
+
+.optionBox:hover   .optionHead img   {
+	-webkit-animation: rotate 0.6s; /* Safari, Chrome and Opera > 12.1 */
+       -moz-animation: rotate 0.3s; /* Firefox < 16 */
+        -ms-animation: rotate 0.3s; /* Internet Explorer */
+         -o-animation: rotate 0.3s; /* Opera < 12.1 */
+            animation: rotate 0.3s;
+     transform: rotate(720deg) ;
 }
-.optionHead img {
-    margin-left: 55%;
-    transform: rotate(180deg);
-    float: right;
-    margin-right: 5%;
+.optionHead img{
+
+margin-left:55%;
+transform: rotate(180deg) ;
+float:right;
+margin-right:5%;
 }
-.options:last-child .optionHead img {
-    margin-left: 62%;
+
+.options :last-child  .optionHead img{
+margin-left:62%;
 }
+
 @keyframes rotate {
-    from {} to {
-        transform: rotate(360deg);
-    }
+    from {  }
+    to   { transform: rotate(360deg) ; }
 }
+
 @-moz-keyframes rotate {
-    from {} to {
-        transform: rotate(360deg);
-    }
+    from {  }
+    to   { transform: rotate(360deg) ; }
 }
-/* Safari, Chrome and Opera > 12.1 */
 
+
+/* Safari, Chrome and Opera > 12.1 */
 @-webkit-keyframes rotate {
-    from {} to {
-        transform: rotate(360deg);
-    }
+    from {  }
+    to   { transform: rotate(360deg) ; }
 }
-/* Internet Explorer */
 
+
+/* Internet Explorer */
 @-ms-keyframes rotate {
-    from {} to {
-        transform: rotate(360deg);
-    }
+     from {  }
+    to   { transform: rotate(360deg) ; }
 }
-/* Opera < 12.1 */
 
+
+/* Opera < 12.1 */
 @-o-keyframes rotate {
-    from {} to {
-        transform: rotate(360deg);
-    }
+    from {  }
+    to   { transform: rotate(360deg) ; }
+
 }
+
+
 @keyframes fadein {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
+    from { opacity: 0; }
+    to   { opacity: 1; }
 }
+
 /* Firefox < 16 */
-
 @-moz-keyframes fadein {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
+    from { opacity: 0; }
+    to   { opacity: 1; }
 }
+
 /* Safari, Chrome and Opera > 12.1 */
-
 @-webkit-keyframes fadein {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
+    from { opacity: 0; }
+    to   { opacity: 1; }
 }
+
 /* Internet Explorer */
-
 @-ms-keyframes fadein {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
+    from { opacity: 0; }
+    to   { opacity: 1; }
 }
-/* Opera < 12.1 */
 
+/* Opera < 12.1 */
 @-o-keyframes fadein {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
+    from { opacity: 0; }
+    to   { opacity: 1; }
 }
-.optionSelect li {
-    cursor: pointer;
+
+.optionSelect li{
+cursor: pointer;
 }
-.optionBox .optionSelect div {
-    border-bottom-style: solid;
-    border-width: thin;
-    border-color: rgba(100, 100, 100, 0.5);
-    margin-left: 20px;
-    margin-right: 20px;
-    padding-bottom: 2px;
-    padding-top: 2px;
+.optionBox  .optionSelect div{
+border-bottom-style: solid;
+	border-width: thin;
+		border-color:rgba(100,100,100,0.5);
+		margin-left:20px;
+		margin-right:20px;
+		padding-bottom:2px;
+		padding-top:2px;
 }
-.optionBox .optionSelect ul:last-child div {
-    border-bottom-style: none;
+ 
+.optionBox  .optionSelect   ul :last-child div{
+border-bottom-style: none;
+
+
+} 
+.optionBox li{
+float:none;
 }
-.optionBox li {
-    float: none;
+
+.optionHead li{
+float: left;
+padding-top: 3px;
+padding-left: 15px;
+width: auto;
 }
-.optionHead li {
-    float: left;
-    padding-top: 3px;
-    padding-left: 15px;
-    width: auto;
+
+.optionHead ul :last-child{
+width: 25px;
+float: right;
+padding-left: 0px;
+margin-right: 5px;
 }
-.optionHead ul:last-child {
-    width: 25px;
-    float: right;
-    padding-left: 0px;
-    margin-right: 5px;
+
+.optionHead ul{
+width: 100%;
+height: 100%;
 }
-.optionHead ul {
-    width: 100%;
-    height: 100%;
+
+.optionBox{
+
+width: 31.3%;
+height: 165px;
+margin-bottom:20px;
+ 
+ 
 }
-.optionBox {
-    width: 31.3%;
-    height: 165px;
-    margin-bottom: 20px;
+.options :first-child  .optionBack{
+background:url("../img/icons/action-report-new.png") no-repeat scroll   50% 70px black;
+
 }
-.options:first-child .optionBack {
-    background: url("../img/icons/action-report-new.png") no-repeat scroll 50% 70px black;
+.options :nth-child(2) .optionBack {
+background:url("../img/icons/action-report-top.png") no-repeat scroll   50% 70px black;
+
 }
-.options:nth-child(2) .optionBack {
-    background: url("../img/icons/action-report-top.png") no-repeat scroll 50% 70px black;
+
+.options :last-child  .optionBack{
+background:url("../img/icons/actions-help.png") no-repeat scroll   50% 70px black;
 }
-.options:last-child .optionBack {
-    background: url("../img/icons/actions-help.png") no-repeat scroll 50% 70px black;
+
+.dropdownOptions{
+height: 0px;
+margin-top: 0px;
+width: 100%;
+
 }
-.dropdownOptions {
-    height: 0px;
-    margin-top: 0px;
-    width: 100%;
+
+.dropdownOption >ul>li{
+
+float:none;
 }
-.dropdownOption >ul>li {
-    float: none;
-}
-.dropdownOption {
+
+.dropdownOption{
+
+
     background-color: white;
     width: 31.3%;
 }
-.marginLeft {
-    margin-left: 3%;
+.marginLeft{
+
+margin-left:3%;
 }
+
 .select {
-    margin-bottom: 0px;
-    height: 20px;
-    margin-top: 0px;
-    width: 100%;
+margin-bottom: 0px;
+height:20px;
+margin-top:0px;
+width:100%;
+
 }
+
 .selectOption {
-    background-color: rgb(235, 235, 235);
-    width: 31.3%;
+background-color:rgb(235,235,235);
+width:31.3%;
+
 }
-.tabsFrame {
-    padding-bottom: 20px;
-    height: auto;
-    min-height: 1500px;
-    width: auto;
-    background-color: rgb(235, 235, 235);
-    overflow: hidden;
+ 
+
+.tabsFrame{
+ padding-bottom: 20px;
+height:auto;
+min-height:1500px;
+width:auto;
+background-color:rgb(235,235,235);
+overflow: hidden;
 }
-.tabs {
-    margin-top: 30px;
-    color: white;
+.tabs{
+margin-top: 30px;
+color:white;
 }
-.tabs > ul {
-    margin-top: 30px;
-    margin-bottom: 0px;
-    height: 50px;
-    width: 100%;
+.tabs > ul{
+margin-top: 30px;
+margin-bottom: 0px;
+height: 50px;
+width: 100%;
+
 }
-.selected div {
-    background-color: #EBEBEB !important;
+.selected div{
+
+ background-color:#EBEBEB !important;
 }
 .selected {
-    color: black !important;
+
+ color:black !important;
 }
 .tab div {
-    text-align: center;
-    padding-top: 15px;
-    height: 35px;
-    background-color: #646464;
+text-align: center;
+padding-top: 15px;
+height: 35px;
+background-color: #646464;
 }
-.tab a {
-    color: white;
+.tab a{
+color:white;
+
 }
-.tab {
-    width: 22.75%;
-    height: 100%;
-    background-color: rgb(100, 100, 100);
-    cursor: pointer;
+.tab{
+width: 22.75%;
+height:100%;
+ background-color:rgb(100,100,100);
+ cursor: pointer;
 }
 .frame1 {
-    display: block;
-    height: auto;
+display:block;
+height:auto;
 }
-.selected {
-    color: black;
+
+.selected{
+
+color:black;
 }
-.tools {
-    width: 100%;
-    height: 30px;
-    background-color: #EBEBEB;
-    margin-top: 40px;
+
+.tools{
+
+width: 100%;
+height: 30px;
+background-color: #EBEBEB;
+margin-top: 40px;
 }
-.chooseReport li {
-    float: none;
-    color: black;
-    background-color: white;
-    width: 220px;
-    margin-left: 15px;
-    height: 20px;
-    padding-left: 15px;
-    padding-top: 2px;
-    border-style: solid;
-    border-width: thin;
-    border-color: rgba(100, 100, 100, 0.5);
-    display: none;
+ 
+ .chooseReport li{
+ 
+float: none;
+color: black;
+background-color: white;
+width: 220px;
+margin-left: 15px;
+height: 20px;
+padding-left: 15px;
+padding-top: 2px;
+
+border-style: solid;
+border-width: thin;
+border-color:rgba(100,100,100,0.5);
+display: none;
+ }
+
+
+  
+.tabframe{
+display:none;
 }
-.tabframe {
-    display: none;
+
+.tab1Frame{
+display:block;
 }
-.tab1Frame {
-    display: block;
+
+.tabsFrame iframe{
+border-style: none;
+width :100%;
+height:2000px;
+
 }
-.tabsFrame iframe {
-    border-style: none;
-    width: 100%;
-    height: 2000px;
+ .frameContainer{
+ width:98%;
+ margin-left:1%;
+ margin-right:1%;
+ margin-top:30px;
+ height:auto;
+ 
+ }
+ 
+ .tools ul{
+width:98.5%;
+cursor: pointer;
+height: 100%;
+position: relative;
+ }
+ 
+  .tools ul :first-child{
+ height: 30px;
+border-style: none;
+display: block;
+ 
+  }
+
+ .chooseReport li img{
+ transform: rotate(180deg);
+margin-left: 85%;
+margin-top: -22px;
+height:25px !important;
+width:25px !important;
+ }
+ 
+ .toolsIcons{
+ float: right;
+margin-top: 20px;
+margin-left: 20px;
+ 
+ }
+ .toolsIcons img{
+ width: 20px !important;
+height: 20px !important;
+cursor: pointer;
+ 
+ }
+ .settings{
+ 
+ background-color: transparent;
+padding-bottom: 10px;
+padding-right: 5px;
+padding-left: 5px;
+padding-top: 5px;
+margin-top: 15px;
+ position:relative;
+ 
+ }
+ a{
+ text-decoration:none;
+ color:white;
+ }
+ a:visited 
+{
+    text-decoration: none; 
+    decoration: none; 
 }
-.frameContainer {
-    width: 98%;
-    margin-left: 1%;
-    margin-right: 1%;
-    margin-top: 30px;
-    height: auto;
-}
-.tools ul {
-    width: 98.5%;
-    cursor: pointer;
-    height: 100%;
-    position: relative;
-}
-.tools ul:first-child {
-    height: 30px;
-    border-style: none;
-    display: block;
-}
-.chooseReport li img {
-    transform: rotate(180deg);
-    margin-left: 85%;
-    margin-top: -22px;
-    height: 25px !important;
-    width: 25px !important;
-}
-.toolsIcons {
-    float: right;
-    margin-top: 20px;
-    margin-left: 20px;
-}
-.toolsIcons img {
-    width: 20px !important;
-    height: 20px !important;
-    cursor: pointer;
-}
-.settings {
-    background-color: transparent;
-    padding-bottom: 10px;
-    padding-right: 5px;
-    padding-left: 5px;
-    padding-top: 5px;
-    margin-top: 15px;
-    position: relative;
-}
-a {
-    text-decoration: none;
-    color: white;
-}
-a:visited {
-    text-decoration: none;
-    decoration: none;
-}
-.toolsIcons a {
-    padding: 0px !important;
-}
-.expandedOption {
-    box-shadow: 0px 5px 6px 0px rgb(0, 0, 0);
-}
+ 
+ .toolsIcons a{
+padding: 0px !important;
+ }
+
+   .expandedOption{ 
+  box-shadow:0px 5px 6px 0px rgb(0, 0, 0);
+  
+  }
 .expandedOption:hover {
-    background-color: #EBEBEB;
+
+background-color: #EBEBEB;
+}
+  
+.editContainer{
+	color: #000;
+background-color: #FFF;
+height: auto;
+width: 97%;
+margin-left: auto;
+margin-right: auto;
+margin-top: 20px;
+box-shadow:0px 1px 9px 0px  rgba(0,0,0,0.5);
+display:none;
+position: relative;
+}
+.editContainer button{
+color:white;
+float:right;
+width: 70px;
+padding: 1px;
+margin-bottom: 10px;
+margin-right: 5px;
+margin-left: 70px;
+}
+
+.editWrapper{
+height:0;
+
+}
+.SaveCancel{
+font-size:20px;
+float:right;
+
+}
+.SaveCancel label{
+font-style: italic;
+ text-decoration: underline;
+    font-style: oblique;
+cursor:pointer;
+}
+
+.edit{
+width: 97%;
+
+overflow: hidden;
+margin-left: 1.5%;
+margin-right: 1.5%;
+}
+ .editContainer .report{
+width: 100%;
+
+ }
+ 
+ .reportNumber{
+ 
+ background-color: transparent;
+ width:15%
+ 
+ }
+ .reportName{
+ 
+ width:40%;
+ 
+ }
+ 
+  .reports{
+ width: 99%;
+margin-top: 1%;
+margin-left: 0.5%;
+margin-right: 0.5%;
+ }
+ .report{
+ background-color:rgb(220,218,218);
+ margin-bottom: 15px;
+ }
+ .report ul{
+ 
+ width:100%;
+ }
+ .report input{
+ width:70%
+ 
+ }
+ 
+ .report div{
+ height: 35px;
+margin-top: -1%;
+width: 98%;
+margin-left: auto;
+margin-right: auto;
+ 
+ }
+ .reportUrl input{
+width: 84%;
+ 
+ }
+ .reportUrl{
+ width:45%;
+ float:right;
+ }
+ 
+ 
+ 
+ @media screen and (max-width:700px) {
+ 
+ body{
+ background-position: 0px 0px;
+ 
+ }
+ header{
+ position: relative;
+ height: 125px;
+ overflow: hidden;
+ }
+ .topNavBar {
+    overflow: hidden;
+	width: 51% !important;
+}
+ .wrapper {
+    padding-top: 0px;
+	
+	}
+	
+	.notifications {
+    margin-top: 0px;
+    margin-bottom: 20px;
+}
+
+
+	
+	.searchField {
+    margin-top: 80px;
+   
+    float: none;
+}
+.container {
+    width: 100%;
+	}
+
+	.notifications  div{
+padding-bottom:5px;
+background-color: #EBEBEB;
+}
+  .selected{
+ display:block !important;
+ }
+ .marginLeft {
+    margin-left: 0%;
+}
+.optionBox {
+    width: 100%;
+ }
+ .tab{
+ display:none;
+ width:100%;
+ 
+ }
+ 
+ .tabs {
+    overflow: hidden;
+    margin-top: 30px;
+}
+ .tabs :hover .tab{
+ 
+ display:block !important;
+ }
+ 
+ .tabsFrame {
+    
+    overflow: visible;
+}
+
+.tabs > ul {
+    
+    height: auto;
+    overflow: hidden;
+    margin-top: 0px;
+}
+.options {
+   
+    height: 540px;
+}
+
+.tools {
+   
+    margin-top: 0px;
+    padding-top: 15px;
+}
+.settings{
+margin-top:0px
+
+}
+
+.arrow{
+
+margin-top:5px;
+}
+
+.reportNumber {
+    padding-top: 5px;
+padding-bottom: 5px;
+    width: 100%;
+}
+
+.reportUrl {
+    width: 100%;
+   margin-bottom: 15px;
 }
 .editContainer {
-    color: #000;
-    background-color: #FFF;
-    height: auto;
-    width: 97%;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 20px;
-    box-shadow: 0px 1px 9px 0px rgba(0, 0, 0, 0.5);
-    display: none;
-    position: relative;
-}
-.editContainer button {
-    color: white;
-    float: right;
-    width: 70px;
-    padding: 1px;
-    margin-bottom: 10px;
-    margin-right: 5px;
-    margin-left: 70px;
-}
-.editWrapper {
-    height: 0;
-}
-.SaveCancel {
-    font-size: 20px;
-    float: right;
-}
-.SaveCancel label {
-    font-style: italic;
-    text-decoration: underline;
-    font-style: oblique;
-    cursor: pointer;
-}
-.edit {
-    width: 97%;
-    overflow: hidden;
-    margin-left: 1.5%;
-    margin-right: 1.5%;
-}
-.editContainer .report {
-    width: 100%;
-}
-.reportNumber {
-    background-color: transparent;
-    width: 15%
-}
+ 
+    margin-top: 5px;
+	}
+
 .reportName {
-    width: 40%;
-}
-.reports {
-    width: 99%;
-    margin-top: 1%;
-    margin-left: 0.5%;
-    margin-right: 0.5%;
-}
-.report {
-    background-color: rgb(220, 218, 218);
-    margin-bottom: 15px;
-}
-.report ul {
     width: 100%;
+	margin-bottom: 10px;
+}
+
+.edit {
+  
+    padding-top: 10px;
 }
 .report input {
-    width: 70%
-}
-.report div {
-    height: 35px;
-    margin-top: -1%;
-    width: 98%;
-    margin-left: auto;
-    margin-right: auto;
-}
-.reportUrl input {
-    width: 84%;
-}
-.reportUrl {
-    width: 45%;
+    width: 80%;
     float: right;
+	margin-right: 5px;
 }
-@media screen and (max-width: 700px) {
-    body {
-        background-position: 0px 0px;
-    }
-    header {
-        position: relative;
-        height: 125px;
-        overflow: hidden;
-    }
-    .topNavBar {
-        overflow: hidden;
-        width: 51% !important;
-    }
-    .wrapper {
-        padding-top: 0px;
-    }
-    .notifications {
-        margin-top: 0px;
-        margin-bottom: 20px;
-    }
-    .searchField {
-        margin-top: 80px;
-        float: none;
-    }
-    .container {
-        width: 100%;
-    }
-    .notifications div {
-        padding-bottom: 5px;
-        background-color: #EBEBEB;
-    }
-    .selected {
-        display: block !important;
-    }
-    .marginLeft {
-        margin-left: 0%;
-    }
-    .optionBox {
-        width: 100%;
-    }
-    .tab {
-        display: none;
-        width: 100%;
-    }
-    .tabs {
-        overflow: hidden;
-        margin-top: 30px;
-    }
-    .tabs:hover .tab {
-        display: block !important;
-    }
-    .tabsFrame {
-        overflow: visible;
-    }
-    .tabs > ul {
-        height: auto;
-        overflow: hidden;
-        margin-top: 0px;
-    }
-    .options {
-        height: 540px;
-    }
-    .tools {
-        margin-top: 0px;
-        padding-top: 15px;
-    }
-    .settings {
-        margin-top: 0px
-    }
-    .arrow {
-        margin-top: 5px;
-    }
-    .reportNumber {
-        padding-top: 5px;
-        padding-bottom: 5px;
-        width: 100%;
-    }
-    .reportUrl {
-        width: 100%;
-        margin-bottom: 15px;
-    }
-    .editContainer {
-        margin-top: 5px;
-    }
-    .reportName {
-        width: 100%;
-        margin-bottom: 10px;
-    }
-    .edit {
-        padding-top: 10px;
-    }
-    .report input {
-        width: 80%;
-        float: right;
-        margin-right: 5px;
-    }
-    .frameContainer {
-        width: 96%;
-        margin-left: 2%;
-        margin-right: 2%;
-    }
+
+.frameContainer {
+    width: 96%;
+    margin-left: 2%;
+    margin-right: 2%;
+    
 }
+
+ }
 /* ==========================================================================
    Helper classes
    ========================================================================== */
+
 /*
  * Hide visually and from screen readers:
  * http://juicystudio.com/article/screen-readers-display-none.php
@@ -720,6 +862,7 @@ a:visited {
     display: none !important;
     visibility: hidden;
 }
+
 /*
  * Hide only visually, but have it available for screen readers:
  * http://snook.ca/archives/html_and_css/hiding-content-for-accessibility
@@ -735,6 +878,7 @@ a:visited {
     position: absolute;
     width: 1px;
 }
+
 /*
  * Extends the .visuallyhidden class to allow the element
  * to be focusable when navigated to via the keyboard:
@@ -750,6 +894,7 @@ a:visited {
     position: static;
     width: auto;
 }
+
 /*
  * Hide visually and from screen readers, but maintain layout
  */
@@ -757,6 +902,7 @@ a:visited {
 .invisible {
     visibility: hidden;
 }
+
 /*
  * Clearfix: contain floats
  *
@@ -771,15 +917,14 @@ a:visited {
 
 .clearfix:before,
 .clearfix:after {
-    content: " ";
-    /* 1 */
-    
-    display: table;
-    /* 2 */
+    content: " "; /* 1 */
+    display: table; /* 2 */
 }
+
 .clearfix:after {
     clear: both;
 }
+
 /* ==========================================================================
    EXAMPLE Media Queries for Responsive Design.
    These examples override the primary ('mobile first') styles.
@@ -789,12 +934,14 @@ a:visited {
 @media only screen and (min-width: 35em) {
     /* Style adjustments for viewports that meet the condition */
 }
+
 @media print,
-(-o-min-device-pixel-ratio: 5/4),
-(-webkit-min-device-pixel-ratio: 1.25),
-(min-resolution: 120dpi) {
+       (-o-min-device-pixel-ratio: 5/4),
+       (-webkit-min-device-pixel-ratio: 1.25),
+       (min-resolution: 120dpi) {
     /* Style adjustments for high resolution devices */
 }
+
 /* ==========================================================================
    Print styles.
    Inlined to avoid the additional HTTP request:
@@ -806,60 +953,68 @@ a:visited {
     *:before,
     *:after {
         background: transparent !important;
-        color: #000 !important;
-        /* Black prints faster:
+        color: #000 !important; /* Black prints faster:
                                    http://www.sanbeiji.com/archives/953 */
-        
         box-shadow: none !important;
         text-shadow: none !important;
     }
+
     a,
     a:visited {
         text-decoration: underline;
     }
+
     a[href]:after {
         content: " (" attr(href) ")";
     }
+
     abbr[title]:after {
         content: " (" attr(title) ")";
     }
+
     /*
      * Don't show links that are fragment identifiers,
      * or use the `javascript:` pseudo protocol
      */
-    
-    a[href^="#"]:after,
+
+a[href^="#"]:after,
     a[href^="javascript:"]:after {
-        content: "";
-    }
-    pre,
+  content: "";
+}
+
+pre,
     blockquote {
-        border: 1px solid #999;
-        page-break-inside: avoid;
-    }
+  border: 1px solid #999;
+  page-break-inside: avoid;
+}
+
     /*
      * Printing Tables:
      * http://css-discuss.incutio.com/wiki/Printing_Tables
      */
-    
-    thead {
-        display: table-header-group;
-    }
-    tr,
+
+thead {
+  display: table-header-group;
+}
+
+tr,
     img {
-        page-break-inside: avoid;
-    }
-    img {
-        max-width: 100% !important;
-    }
-    p,
+  page-break-inside: avoid;
+}
+
+img {
+  max-width: 100% !important;
+}
+
+p,
     h2,
     h3 {
-        orphans: 3;
-        widows: 3;
-    }
-    h2,
+  orphans: 3;
+  widows: 3;
+}
+
+h2,
     h3 {
-        page-break-after: avoid;
-    }
+  page-break-after: avoid;
+}
 }
