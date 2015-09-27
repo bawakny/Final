@@ -84,18 +84,24 @@ tabSites.controller('tab', function($scope, $window) {
 			$('#frame1').attr("src", $scope.sites[0].url);
 			$('.tab1Frame .dropDownOption').html($scope.sites[0].name + '<img src="./img/icons/icon-arrow-up-b-128.png"  height="25" width="25">');
 			$scope.linkVar = $scope.sites[0].url;
+			$('.tab'+ i +'Frame .reportName1 input').val($scope.sites[0].name);
+			$('.tab1Frame .reportName2 input').val($scope.sites[1].name);
+			$('.tab1Frame .reportName3 input').val($scope.sites[2].name);
+			$('.tab1Frame .reportUrl1 input').val($scope.sites[0].url);
+			$('.tab1Frame .reportUrl2 input').val($scope.sites[1].url);
+			$('.tab1Frame .reportUrl3 input').val($scope.sites[2].url);
 		}
 		else if (i == 3) {
 			$('#frame3').attr("src", $scope.sites3[0].url);
 			$('.tab3Frame .dropDownOption').html($scope.sites3[0].name + '<img src="./img/icons/icon-arrow-up-b-128.png"  height="25" width="25">');
 			$scope.linkVar3 = $scope.sites3[0].url;
+			$('.tab3Frame .reportName2 input').val($scope.sites3[1].name);
+			$('.tab3Frame .reportName3 input').val($scope.sites3[2].name);
+			$('.tab3Frame .reportUrl1 input').val($scope.sites3[0].url);
+			$('.tab3Frame .reportUrl2 input').val($scope.sites3[1].url);
+			$('.tab3Frame .reportUrl3 input').val($scope.sites3[2].url);
 		}
-		$('.tab'+ i +'Frame .reportName1 input').val($scope.sites[0].name);
-		$('.tab'+ i +'Frame .reportName2 input').val($scope.sites[1].name);
-		$('.tab'+ i +'Frame .reportName3 input').val($scope.sites[2].name);
-		$('.tab'+ i +'Frame .reportUrl1 input').val($scope.sites[0].url);
-		$('.tab'+ i +'Frame .reportUrl2 input').val($scope.sites[1].url);
-		$('.tab'+ i +'Frame .reportUrl3 input').val($scope.sites[2].url);
+		
 	}
 
 	function tabSelected(tabId) {
