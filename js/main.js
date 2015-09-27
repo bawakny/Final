@@ -90,6 +90,12 @@ tabSites.controller('tab', function($scope, $window) {
 			$('.tab3Frame .dropDownOption').html($scope.sites3[0].name + '<img src="./img/icons/icon-arrow-up-b-128.png"  height="25" width="25">');
 			$scope.linkVar3 = $scope.sites3[0].url;
 		}
+		$('.tab'+ i +'Frame .reportName1 input').val($scope.sites[0].name);
+		$('.tab'+ i +'Frame .reportName2 input').val($scope.sites[1].name);
+		$('.tab'+ i +'Frame .reportName3 input').val($scope.sites[2].name);
+		$('.tab'+ i +'Frame .reportUrl1 input').val($scope.sites[0].url);
+		$('.tab'+ i +'Frame .reportUrl2 input').val($scope.sites[1].url);
+		$('.tab'+ i +'Frame .reportUrl3 input').val($scope.sites[2].url);
 	}
 
 	function tabSelected(tabId) {
@@ -175,6 +181,7 @@ tabSites.controller('tab', function($scope, $window) {
 					$link = $scope.link3;
 					break;
 			}
+			addhttp($link);
 			if (($name != null) && ($link != null)) {
 				obj = {
 					"name": $name,
@@ -217,6 +224,7 @@ tabSites.controller('tab', function($scope, $window) {
 					$link = $scope.link3_3;
 					break;
 			}
+			addhttp($link);
 			if (($name != null) && ($link != null)) {
 				obj = {
 					"name": $name,
@@ -274,3 +282,10 @@ tabSites.controller('tab', function($scope, $window) {
 		updateSite(3);
 	};
 });
+
+function addhttp($url) {
+    if (!preg_match("@^[hf]tt?ps?://@", $url)) {
+        $url = "http://" . $url;
+    }
+    return $url;
+}
