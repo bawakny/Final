@@ -187,7 +187,6 @@ tabSites.controller('tab', function($scope, $window) {
 					$link = $scope.link3;
 					break;
 			}
-			addhttp($link);
 			if (($name != null) && ($link != null)) {
 				obj = {
 					"name": $name,
@@ -230,7 +229,6 @@ tabSites.controller('tab', function($scope, $window) {
 					$link = $scope.link3_3;
 					break;
 			}
-			addhttp($link);
 			if (($name != null) && ($link != null)) {
 				obj = {
 					"name": $name,
@@ -288,10 +286,3 @@ tabSites.controller('tab', function($scope, $window) {
 		updateSite(3);
 	};
 });
-
-function addhttp($url) {
-    if (!preg_match("@^[hf]tt?ps?://@", $url)) {
-        $url = "http://" . $url;
-    }
-    return $url;
-}
